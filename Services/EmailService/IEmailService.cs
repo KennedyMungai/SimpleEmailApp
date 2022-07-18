@@ -1,6 +1,6 @@
 namespace SimpleEmailApp.Services.EmailService;
 
-public class IEmailService
+public interface IEmailService
 {
-    
+    void SendEmail(EmailDto request);
 }
