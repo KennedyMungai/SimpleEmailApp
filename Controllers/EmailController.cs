@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using SimpleEmailApp.Services.EmailService;
 
 namespace SimpleEmailApp.Controllers;
 
