@@ -8,11 +8,17 @@ namespace SimpleEmailApp.Controllers;
 [ApiController]
 public class EmailController : ControllerBase
 {
-    [HttpPost]
-    public IActionResult SendEmail(string body)
-    {
-        
+    private readonly IEmailService EmailService;
 
+    public EmailController(IEmailService EmailService)
+    {
+        this.EmailService = EmailService;
+    }
+
+    [HttpPost]
+    public IActionResult SendEmail(EmailDto request)
+    {
+        EmailService.SendEmail(request);
         return Ok();
     }
 }
