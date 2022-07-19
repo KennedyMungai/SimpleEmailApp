@@ -11,8 +11,8 @@ public class EmailService : IEmailService
     {
         var email = new MimeMessage();
         email.From.Add(MailboxAddress.Parse("betsy.cummerata1@ethereal.email"));
-        email.To.Add(MailboxAddress.Parse("betsy.cummerata1@ethereal.email"));
-        email.Subject = "Test Email Subject";
+        email.To.Add(MailboxAddress.Parse(request.To));
+        email.Subject = request.Subject;
         email.Body = new TextPart(TextFormat.Html)
         {
             Text = request.Body
